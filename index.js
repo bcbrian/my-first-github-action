@@ -1,4 +1,6 @@
 console.log('node');
+const IP = process.argv[2];
+console.log(`IP ::> $IP`)
 let waiting = true;
 setTimeout(function longWait() {
   console.log('done');
