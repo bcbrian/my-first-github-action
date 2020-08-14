@@ -1,0 +1,23 @@
+{
+  "name": "my-first-github-action",
+  "version": "1.0.0",
+  "description": "learning how github actions do",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcbrian/my-first-github-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcbrian/my-first-github-action/issues"
+  },
+  "homepage": "https://github.com/bcbrian/my-first-github-action#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
