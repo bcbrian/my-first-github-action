@@ -1,14 +1,14 @@
 console.log('node');
 let waiting = true;
-setTimeout(function waiting() {
+setTimeout(function longWait() {
   waiting = false;
   process.exit();
 }, 30000);
 
-function waiting() {
+function shortWait() {
   console.log('waiting');
   if (waiting) {
-    setTimeout(waiting, 1000);
+    setTimeout(shortWait, 1000);
   }
 }
-waiting();
+shortWait();
