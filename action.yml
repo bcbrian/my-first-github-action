@@ -2,6 +2,10 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
+  ip: #public ipv4
+    description: 'public ipv4'
+    required: true
+    default: '127.0.0.1'
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
