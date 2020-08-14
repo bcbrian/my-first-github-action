@@ -1,2 +1,2 @@
 console.log("node");
-process.exit();
+process.exit(1);
