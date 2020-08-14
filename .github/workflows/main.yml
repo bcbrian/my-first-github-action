@@ -15,6 +15,8 @@ jobs:
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
         id: hello
+        ports: 
+          - 3000:3000
         with:
           who-to-greet: 'Mona the Octocat'
           ip: '${{steps.ip.outputs.ipv4}}'
