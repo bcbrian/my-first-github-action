@@ -21,7 +21,7 @@ jobs:
     #setup
     # Runs a single command using the runners shell
     - name: check if should release
-      run: echo "::set-output name=can_release::true"
+      run: echo '::set-output name=can_release::true'
       id: check-should-release
 
 
