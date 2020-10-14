@@ -29,7 +29,7 @@ jobs:
         node-version: 12.x
     # Runs a single command using the runners shell
     - name: setup
-      run:  chmod +x ./buildScripts/canCI.sh && chmod +x ./buildScripts/canCIRelease.sh
+      run:  chmod +x ./.scripts/canCI.sh && chmod +x ./.scripts/canCIRelease.sh
     - name: check if should release
       run: .scripts/canCI.sh "echo '::set-output name=can_release::true'"
       id: check-should-release
