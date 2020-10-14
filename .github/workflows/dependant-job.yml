@@ -1,0 +1,39 @@
+# This is a basic workflow that is manually triggered
+
+name: dependant job
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  check:
+    outputs:
+      can_release: ${{ steps.check-should-release.can_release }}
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    #setup
+    # Runs a single command using the runners shell
+    - name: check if should release
+      run: echo "::set-output name=can_release::true"
+      id: check-should-release
+
+
+  # This workflow contains a single job called "build"
+  build:
+    needs: check
+    if: needs.check.outputs.can_release == 'true'
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    #setup
+    - name: release setup
+      run: echo "we are releasing"
