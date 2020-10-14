@@ -15,14 +15,23 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       can_release: ${{ steps.check-should-release.outputs.can_release }}
+      
+     
+   
     
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     #setup
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
     # Runs a single command using the runners shell
+    - name: setup
+      run:  chmod +x ./buildScripts/canCI.sh && chmod +x ./buildScripts/canCIRelease.sh
     - name: check if should release
-      run: echo '::set-output name=can_release::true'
+      run: .scripts/canCI.sh "echo '::set-output name=can_release::true'"
       id: check-should-release
 
 
