@@ -20,4 +20,4 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: send call
-      run: curl "https://hbut6.sse.codesandbox.io/v20.10.73"
+      run: curl -X POST "https://hbut6.sse.codesandbox.io/v20.10.73"
