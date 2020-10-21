@@ -30,11 +30,23 @@ async function main() {
   console.log("****************");
   console.log("****************");
   console.log("****************");
-  console.log(JSON.stringify(resultQued, null, 2));
+  console.log(
+    JSON.stringify(
+      resultQued.data.workflwow_runs.map(({ run_number }) => run_number),
+      null,
+      2
+    )
+  );
   console.log("****************");
   console.log("****************");
   console.log("****************");
-  console.log(JSON.stringify(resultsRunning, null, 2));
+  console.log(
+    JSON.stringify(
+      resultsRunning.data.workflwow_runs.map(({ run_number }) => run_number),
+      null,
+      2
+    )
+  );
   console.log("****************");
   console.log("****************");
   console.log("****************");
@@ -60,6 +72,6 @@ async function main() {
 
   setTimeout(() => {
     process.exit();
-  }, 5 * 60 * 1000);
+  }, 0.5 * 60 * 1000);
 }
 main();
