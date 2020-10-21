@@ -16,11 +16,11 @@ async function main(){
   console.log('****************');
   console.log('****************');
   console.log('****************');
-  console.log(resultQued);
+  console.log(JSON.stringify(resultQued, null, 2));
   console.log('****************');
   console.log('****************');
   console.log('****************');
-  console.log(resultsRunning);
+  console.log(JSON.stringify(resultsRunning, null, 2));
   console.log('****************');
   console.log('****************');
   console.log('****************');
