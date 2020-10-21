@@ -32,7 +32,7 @@ async function main() {
   console.log("****************");
   console.log(
     JSON.stringify(
-      resultQued.data.workflwow_runs.map(({ run_number }) => run_number),
+      resultQued.data.workflow_runs.map(({ run_number }) => run_number),
       null,
       2
     )
@@ -42,7 +42,7 @@ async function main() {
   console.log("****************");
   console.log(
     JSON.stringify(
-      resultsRunning.data.workflwow_runs.map(({ run_number }) => run_number),
+      resultsRunning.data.workflow_runs.map(({ run_number }) => run_number),
       null,
       2
     )
@@ -52,11 +52,11 @@ async function main() {
   console.log("****************");
 
   const qued =
-    resultQued?.data?.workflwow_runs?.filter(
+    resultQued?.data?.workflow_runs?.filter(
       ({ run_number }) => run_number < thisRunNum
     ) || [];
   const running =
-    resultsRunning?.data?.workflwow_runs?.filter(
+    resultsRunning?.data?.workflow_runs?.filter(
       ({ run_number }) => run_number < thisRunNum
     ) || [];
 
