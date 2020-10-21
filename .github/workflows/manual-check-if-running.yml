@@ -26,4 +26,4 @@ jobs:
     - name: npm install
       run: npm ci
     - name: Send greeting
-      run: GITTOKEN=${{ secrets.GITTOKEN }} npm run checkIfWorkFlowIsRunning
+      run: GITTOKEN=${{ secrets.GITTOKEN }} npm run checkIfWorkFlowIsRunning -- ${{ github.run_number }}
