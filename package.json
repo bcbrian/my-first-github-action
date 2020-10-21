@@ -4,7 +4,8 @@
   "description": "learning how github actions do",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "checkIfWorkFlowIsRunning": "node checkIfWorkFlowIsRunning.js"
   },
   "repository": {
     "type": "git",
