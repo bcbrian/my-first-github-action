@@ -15,7 +15,12 @@ async function main(){
     workflow_id: 'manual-check-if-running.yml',
     status: 'in_progress',
   });
-  console.log('I am: ', process.argv[2]);
+
+  const thisRunNum = process.argv[2];
+  console.log('****************');
+  console.log('****************');
+  console.log('****************');
+  console.log('I am: ', thisRunId);
   console.log('****************');
   console.log('****************');
   console.log('****************');
@@ -28,8 +33,21 @@ async function main(){
   console.log('****************');
   console.log('****************');
 
+  const qued = resultQued.data.workflwow_runs.filter(({run_number}) => runNumber < thisRunNum);
+  const running = resultsRunning.data.workflwow_runs.filter(({run_number}) => runNumber < thisRunNum);
+
+  const all = [...qued, ...running];
+  console.log(all.map(a => a.run_number));
+  console.log('****************');
+  console.log('****************');
+  console.log('****************');
+  console.log(all.map(a => a.cancel_url));
+  console.log('****************');
+  console.log('****************');
+  console.log('****************');
+
   setTimeout(() => {
     process.exit();
-  }, 3000);
+  }, 5 * 60 * 1000);
 }
 main();
