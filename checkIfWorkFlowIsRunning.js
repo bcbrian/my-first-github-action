@@ -65,8 +65,10 @@ async function main() {
   console.log("****************");
   console.log("****************");
   console.log("****************");
-  console.log(all.map((a) => a.cancel_url));
   console.log("****************");
+  console.log("Canceling");
+  console.log(all.map((a) => a.cancel_url));
+  all.map((a) => octokit.request(`GET ${a.cancel_url}`));
   console.log("****************");
   console.log("****************");
 
