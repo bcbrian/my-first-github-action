@@ -68,12 +68,24 @@ async function main() {
   console.log("****************");
   console.log("Canceling");
   console.log(all.map((a) => a.cancel_url));
-  all.map((a) => octokit.request(`GET ${a.cancel_url}`).catch(err => console.log(`could not cancel: ${a.run_number}\n ${err}`)));
+  all.map((a) =>
+    octokit
+      .request(`GET ${a.cancel_url}`)
+      .catch((err) => console.log(`could not cancel: ${a.run_number}\n ${err}`))
+  );
   console.log("****************");
   console.log("****************");
 
-  setTimeout(() => {
-    process.exit();
-  }, 0.5 * 60 * 1000);
+  let countDown = 30;
+
+  function counter() {
+    if (counter > 0) {
+      setTimeout(() => {
+        console.log(countDown);
+        countDown--;
+        counter();
+      }, 1000);
+    }
+  }
 }
 main();
