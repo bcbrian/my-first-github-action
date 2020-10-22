@@ -87,5 +87,6 @@ async function main() {
       }, 1000);
     }
   }
+  counter()
 }
 main();
