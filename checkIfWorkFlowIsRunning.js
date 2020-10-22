@@ -79,7 +79,7 @@ async function main() {
   let countDown = 30;
 
   function counter() {
-    if (counter > 0) {
+    if (countDown > 0) {
       setTimeout(() => {
         console.log(countDown);
         countDown--;
