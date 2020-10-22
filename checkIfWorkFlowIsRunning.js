@@ -68,7 +68,7 @@ async function main() {
   console.log("****************");
   console.log("Canceling");
   console.log(all.map((a) => a.cancel_url));
-  all.map((a) => octokit.request(`GET ${a.cancel_url}`));
+  all.map((a) => octokit.request(`GET ${a.cancel_url}`).catch(err => console.log(`could not cancel: ${a.run_number}\n ${err}`)));
   console.log("****************");
   console.log("****************");
 
